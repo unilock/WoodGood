@@ -2,10 +2,10 @@ package net.mehvahdjukaar.every_compat.modules.decorative_blocks;
 
 
 import com.mojang.datafixers.util.Pair;
+import lilypuree.decorative_blocks.FabricCreativeTab;
 import lilypuree.decorative_blocks.blocks.types.VanillaWoodTypes;
 import lilypuree.decorative_blocks.blocks.types.WoodDecorativeBlockTypes;
 import lilypuree.decorative_blocks.core.DBBlocks;
-import lilypuree.decorative_blocks.core.DBItems;
 import lilypuree.decorative_blocks.items.SeatItem;
 import lilypuree.decorative_blocks.items.SupportItem;
 import net.mehvahdjukaar.every_compat.api.SimpleEntrySet;
@@ -18,9 +18,10 @@ import net.mehvahdjukaar.moonlight.api.resources.textures.TextureImage;
 import net.mehvahdjukaar.moonlight.api.set.wood.WoodType;
 import net.mehvahdjukaar.moonlight.api.set.wood.WoodTypeRegistry;
 import net.minecraft.client.resources.metadata.animation.AnimationMetadataSection;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Collection;
@@ -38,6 +39,7 @@ public class DecorativeBlocksModule extends SimpleModule {
 
     public DecorativeBlocksModule(String modId) {
         super(modId, "db");
+        CreativeModeTab tab = BuiltInRegistries.CREATIVE_MODE_TAB.get(FabricCreativeTab.CREATIVE_TAB);
 
 
         beams = SimpleEntrySet.builder(WoodType.class, "beam",
@@ -46,7 +48,7 @@ public class DecorativeBlocksModule extends SimpleModule {
                 .addTag(modRes("beams"), Registries.BLOCK)
                 .addTag(modRes("beams"), Registries.ITEM)
                 .defaultRecipe()
-                .setTab(() -> DBItems.ITEM_GROUP)
+                .setTab(() -> tab)
                 .setPalette(this::makeDBPalette)
                 .addTexture(modRes("block/oak_beam_end"))
                 .addTexture(modRes("block/oak_beam_side"))
@@ -61,7 +63,7 @@ public class DecorativeBlocksModule extends SimpleModule {
                 .addTag(modRes("palisades"), Registries.BLOCK)
                 .addTag(modRes("palisades"), Registries.ITEM)
                 .defaultRecipe()
-                .setTab(() -> DBItems.ITEM_GROUP)
+                .setTab(() -> tab)
                 .setPalette(this::makeDBPalette)
                 .addTexture(modRes("block/oak_palisade_end"))
                 .addTexture(modRes("block/oak_palisade_side"))
@@ -77,7 +79,7 @@ public class DecorativeBlocksModule extends SimpleModule {
                 .addTag(modRes("supports"), Registries.ITEM)
                 .addCustomItem((w, b, p) -> new SupportItem(b, p))
                 .defaultRecipe()
-                .setTab(() -> DBItems.ITEM_GROUP)
+                .setTab(() -> tab)
                 .setPalette(this::makeDBPalette)
                 .addTexture(modRes("block/oak_support_end"))
                 .addTexture(modRes("block/oak_support_side"))
@@ -94,7 +96,7 @@ public class DecorativeBlocksModule extends SimpleModule {
                 .addTag(modRes("seats"), Registries.ITEM)
                 .defaultRecipe()
                 .addCustomItem((w, b, p) -> new SeatItem(b, p))
-                .setTab(() -> DBItems.ITEM_GROUP)
+                .setTab(() -> tab)
                 .setPalette(this::makeDBPalette)
                 .addTexture(modRes("block/oak_seat"))
                 .build();

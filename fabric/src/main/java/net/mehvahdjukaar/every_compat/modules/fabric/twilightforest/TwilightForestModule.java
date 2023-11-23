@@ -1,39 +1,7 @@
 package net.mehvahdjukaar.every_compat.modules.fabric.twilightforest;
 
-import io.github.fabricators_of_create.porting_lib.util.RegistryObject;
-import net.mehvahdjukaar.every_compat.EveryCompat;
-import net.mehvahdjukaar.every_compat.api.SimpleEntrySet;
-import net.mehvahdjukaar.every_compat.api.SimpleModule;
-import net.mehvahdjukaar.every_compat.configs.ModConfigs;
-import net.mehvahdjukaar.moonlight.api.misc.Registrator;
-import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
-import net.mehvahdjukaar.moonlight.api.set.wood.WoodType;
-import net.mehvahdjukaar.moonlight.api.set.wood.WoodTypeRegistry;
-import net.mehvahdjukaar.moonlight.api.util.Utils;
-import net.minecraft.client.renderer.BiomeColors;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import twilightforest.block.BanisterBlock;
-import twilightforest.block.HollowLogClimbable;
-import twilightforest.block.HollowLogHorizontal;
-import twilightforest.block.HollowLogVertical;
-import twilightforest.init.TFBlocks;
-import twilightforest.init.TFItems;
-import twilightforest.item.HollowLogItem;
-
-import java.util.function.Supplier;
-
+/*
 public class TwilightForestModule extends SimpleModule {
-
     public final SimpleEntrySet<WoodType, BanisterBlock> banisters;
     public final SimpleEntrySet<WoodType, HollowLogVertical> hollowLogsVertical;
     public final SimpleEntrySet<WoodType, HollowLogHorizontal> hollowLogsHorizontal;
@@ -137,3 +105,4 @@ public class TwilightForestModule extends SimpleModule {
         return null;
     }
 }
+ */

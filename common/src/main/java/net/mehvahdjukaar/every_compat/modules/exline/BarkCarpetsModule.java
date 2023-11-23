@@ -1,7 +1,6 @@
 package net.mehvahdjukaar.every_compat.modules.exline;
 
 import com.exline.barkcarpets.BarkCarpets;
-import com.exline.barkcarpets.BlockInit;
 import com.exline.barkcarpets.block.BarkCarpetBlock;
 import net.mehvahdjukaar.every_compat.api.SimpleEntrySet;
 import net.mehvahdjukaar.every_compat.api.SimpleModule;
@@ -9,7 +8,7 @@ import net.mehvahdjukaar.moonlight.api.set.wood.WoodType;
 import net.mehvahdjukaar.moonlight.api.set.wood.WoodTypeRegistry;
 import net.mehvahdjukaar.moonlight.api.util.Utils;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,7 +20,7 @@ public class BarkCarpetsModule extends SimpleModule {
 
     public BarkCarpetsModule(String modId) {
         super(modId, "bc");
-        CreativeModeTab tab = BarkCarpets.ITEM_GROUP;
+        CreativeModeTab tab = BuiltInRegistries.CREATIVE_MODE_TAB.get(BarkCarpets.BARK_CARPETS_GROUP);
 
 
         barkCarpets = SimpleEntrySet.builder(WoodType.class, "bark_carpet",
